@@ -14,9 +14,9 @@ public class LineRen : MonoBehaviour
         lr.positionCount = points.Length;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // Loops through number of points drawing lines between them
         for (int i = 0; i < points.Length; i++)
         {
             lr.SetPosition(i, points[i].position);

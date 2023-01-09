@@ -15,6 +15,9 @@ public class ConnectionBehaviour : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+    // Update the position of the centre object
+    centre.transform.position = (red.transform.position + green.transform.position + blue.transform.position) / 3;
+
     // Calculate the rope length
     ropeLength = Vector2.Distance(red.transform.position, centre.transform.position) + 
                  Vector2.Distance(green.transform.position, centre.transform.position) + 
@@ -22,10 +25,7 @@ public class ConnectionBehaviour : MonoBehaviour
 
     // Update the rope length text
     RopeLengthText.GetComponent<TextMeshPro>().text = ropeLength.ToString("F1");
-
-    // Update the position of the centre object
-    centre.transform.position = (red.transform.position + green.transform.position + blue.transform.position) / 3;
-
+ 
     // Check if the connection is valid
     if (ropeLength > ropeLengthMin && ropeLength < ropeLengthMax)
     {
