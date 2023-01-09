@@ -8,7 +8,9 @@ public class ConnectionBehaviour : MonoBehaviour
 {
   public GameObject centre, red, green, blue, RopeLengthText;
   public float ropeLength = 100f;
+  [SerializeField]
   private float ropeLengthMax = 100f;
+  [SerializeField]
   private float ropeLengthMin = 10f;
   public bool valid;
 
