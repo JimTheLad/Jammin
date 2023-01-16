@@ -24,6 +24,12 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
+        gameObject.GetComponent<CircleCollider2D>().radius = playerCollisionRadius; //BEFORE BALANCE
+        if(Input.GetKey(up)) transform.position += new Vector3(0,speed * Time.deltaTime,0);
+        if(Input.GetKey(down)) transform.position += new Vector3(0,-(speed * Time.deltaTime),0);
+        if(Input.GetKey(left)) transform.position += new Vector3(-(speed * Time.deltaTime),0,0);
+        if(Input.GetKey(right)) transform.position += new Vector3(speed * Time.deltaTime,0,0);
+        /*
         if(!onIce)
         {
             gameObject.GetComponent<CircleCollider2D>().radius = playerCollisionRadius; //BEFORE BALANCE
@@ -39,7 +45,7 @@ public class Player : MonoBehaviour
             if(Input.GetKey(left)) body.velocity = new Vector3(-(speed * Time.deltaTime),0,0);
             if(Input.GetKey(right)) body.velocity = new Vector3(speed * Time.deltaTime,0,0);
         }
-
+        */
         
     }
     void LateUpdate()
