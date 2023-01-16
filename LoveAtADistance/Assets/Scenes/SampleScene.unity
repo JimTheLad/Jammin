@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &104698869
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23090,6 +23090,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -16, y: -12, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 11
+      m_TileSpriteIndex: 11
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 3
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -14, y: -12, z: 0}
     second:
       serializedVersion: 2
@@ -37564,7 +37574,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 638335cbc76284e48b25efb24a8e569d, type: 2}
   - m_RefCount: 259
     m_Data: {fileID: 11400000, guid: 8d9ddb8b524645a46a0769f9e69178be, type: 2}
-  - m_RefCount: 423
+  - m_RefCount: 424
     m_Data: {fileID: 11400000, guid: 80b49cd01e7c43f4fb892bb13f154c62, type: 2}
   - m_RefCount: 2736
     m_Data: {fileID: 11400000, guid: eda747b3528f3e846aba1d908578b69f, type: 2}
@@ -37591,12 +37601,12 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 56c858298dc9dc64db1cb7685b7e0855, type: 3}
   - m_RefCount: 259
     m_Data: {fileID: 21300000, guid: 1751deedb9a7d844a8361d7a7badaf51, type: 3}
-  - m_RefCount: 423
+  - m_RefCount: 424
     m_Data: {fileID: 21300000, guid: e0780e8505a6b1a4d89b469abb14bce6, type: 3}
   - m_RefCount: 2736
     m_Data: {fileID: 21300000, guid: c9f20fec6667a8b41afaaefc8f19cd9c, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 3720
+  - m_RefCount: 3721
     m_Data:
       e00: 1
       e01: 0
@@ -37621,7 +37631,7 @@ Tilemap:
     m_Data: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
   - m_RefCount: 259
     m_Data: {r: 0.9433962, g: 0.84104663, b: 0.84104663, a: 1}
-  - m_RefCount: 423
+  - m_RefCount: 424
     m_Data: {r: 0.9411765, g: 0.9339623, b: 0.9339623, a: 1}
   - m_RefCount: 3019
     m_Data: {r: 1, g: 1, b: 1, a: 1}
@@ -43377,16 +43387,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -16, y: -12, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 13
-      m_TileSpriteIndex: 13
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -15, y: -12, z: 0}
     second:
       serializedVersion: 2
@@ -48795,7 +48795,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: f7c1c77cd6dd2fe448d25d1174e80baf, type: 2}
   - m_RefCount: 91
     m_Data: {fileID: 11400000, guid: 7f6d2773f1e5b2848acec51262a62868, type: 2}
-  - m_RefCount: 270
+  - m_RefCount: 269
     m_Data: {fileID: 11400000, guid: 0ee61e3bbcd6ce04fbd6ad1244d21b96, type: 2}
   - m_RefCount: 12
     m_Data: {fileID: 11400000, guid: b07c6eb62468e9245a563a67bb7ce70e, type: 2}
@@ -48854,7 +48854,7 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: eed567bea1894f448a1bcc907ce179a6, type: 3}
   - m_RefCount: 91
     m_Data: {fileID: 21300000, guid: 99d6032160b830949898c0f1150e389e, type: 3}
-  - m_RefCount: 270
+  - m_RefCount: 269
     m_Data: {fileID: 21300000, guid: 882cfda81ee50e54991fd58c01394928, type: 3}
   - m_RefCount: 12
     m_Data: {fileID: 21300000, guid: 6c3c4853975fe7e4fb2806266af1aeef, type: 3}
@@ -48887,7 +48887,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 9c227797f73a192479cccb73c2f380d7, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 1071
+  - m_RefCount: 1070
     m_Data:
       e00: 1
       e01: 0
@@ -48906,7 +48906,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 1071
+  - m_RefCount: 1070
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: 3.436e-41, g: 3.436e-41, b: 3.436e-41, a: 3.436e-41}
@@ -49162,7 +49162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2023032306
 MonoBehaviour:
   m_ObjectHideFlags: 0
