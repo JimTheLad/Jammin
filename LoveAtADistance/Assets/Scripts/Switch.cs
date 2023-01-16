@@ -7,7 +7,7 @@ public class Switch : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    private bool isOn = false;
+    public static bool isOn = false;
 
     private void Start()
     {
