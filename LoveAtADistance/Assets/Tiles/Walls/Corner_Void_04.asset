@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Corner_Void_04
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: b94b54c41e744ce4796b03c1b6b20b30, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.8066038, b: 0.8066038, a: 1}
   m_Transform:
     e00: 1
     e01: 0

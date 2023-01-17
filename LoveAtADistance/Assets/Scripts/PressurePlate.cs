@@ -5,7 +5,7 @@ public class PressurePlate : MonoBehaviour
     public Sprite pressedSprite;
     public Sprite notPressedSprite;
     private SpriteRenderer spriteRenderer;
-    private bool isPressed = false;
+    public bool isPressed = false;
 
     private void Start()
     {

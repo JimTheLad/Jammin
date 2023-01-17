@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ground_Wall_02
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: 9f1c7afcf0055884da1e96da1707dfcf, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.8066038, b: 0.8066038, a: 1}
   m_Transform:
     e00: 1
     e01: 0
