@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     public GameObject centre;
     private ConnectionBehaviour connectionBehaviour;
     private bool isValid = true;
-    private bool onIce = false;
+    private bool sliding = false;
     private Rigidbody2D body;
 
     void Start()
@@ -54,5 +54,8 @@ public class Player : MonoBehaviour
         {
             centre.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
         }
+    }
+    private void OnCollisionEnter(Collision other) {
+        
     }
 }
