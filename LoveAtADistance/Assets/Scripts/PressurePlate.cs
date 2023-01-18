@@ -6,11 +6,13 @@ public class PressurePlate : MonoBehaviour
     public Sprite notPressedSprite;
     private SpriteRenderer spriteRenderer;
     public bool isPressed = false;
+    private AudioSource audioSource;
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = notPressedSprite;
+        audioSource = transform.GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -19,6 +21,7 @@ public class PressurePlate : MonoBehaviour
         {
             spriteRenderer.sprite = pressedSprite;
             isPressed = true;
+            audioSource.Play();
         }
     }
 

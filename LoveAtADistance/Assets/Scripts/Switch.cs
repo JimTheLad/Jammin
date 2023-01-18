@@ -6,6 +6,7 @@ public class Switch : MonoBehaviour
     public Sprite offSprite;
 
     private SpriteRenderer spriteRenderer;
+    private AudioSource audioSource;
 
     public bool isOn = false;
 
@@ -13,6 +14,7 @@ public class Switch : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = offSprite;
+        audioSource = transform.GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -24,10 +26,12 @@ public class Switch : MonoBehaviour
             {
                 spriteRenderer.sprite = offSprite;
                 isOn = false;
+                audioSource.Play();
             }else
             {
                 spriteRenderer.sprite = onSprite;
                 isOn = true;
+                audioSource.Play();
             }
         }
     }

@@ -50,8 +50,8 @@ public class ConnectionBehaviour : MonoBehaviour
     {
       Color tmp = spriteRenderer.color;
       tmp.a = 255f * (((ropeLength - (ropeLengthMax - warningRange))) / warningRange);
-      print(255f * (((ropeLength - (ropeLengthMax - warningRange))) / warningRange));
-      print(((ropeLength - (12 - 2)) / 2));
+      //print(255f * (((ropeLength - (ropeLengthMax - warningRange))) / warningRange));
+      //print(((ropeLength - (12 - 2)) / 2));
       //print((ropeLengthMax - warningRange));
       spriteRenderer.color = tmp;
 
