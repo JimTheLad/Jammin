@@ -13,18 +13,18 @@ public class PressurePlate : MonoBehaviour
         spriteRenderer.sprite = notPressedSprite;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if (other.GetType() == typeof(BoxCollider2D) && other.tag == "Player") //Checks it was player body not radius that hits switch //PRESS
+        if (col.GetType() == typeof(BoxCollider2D) && col.tag == "Player") //Checks it was player body not radius that hits switch //PRESS
         {
             spriteRenderer.sprite = pressedSprite;
             isPressed = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D col)
     {
-        if (other.GetType() == typeof(BoxCollider2D) && other.tag == "Player") //Checks it was player body not radius that hits switch //RELEASE
+        if (col.GetType() == typeof(BoxCollider2D) && col.tag == "Player") //Checks it was player body not radius that hits switch //RELEASE
         {
             spriteRenderer.sprite = notPressedSprite;
             isPressed = false;

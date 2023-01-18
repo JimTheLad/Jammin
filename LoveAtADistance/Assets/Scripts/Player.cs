@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
             if(Input.GetKey(right)) transform.position += new Vector3(speed * Time.deltaTime,0,0);
         }else
         {
-            gameObject.GetComponent<CircleCollider2D>().radius = playerCollisionRadius; //BEFORE BALANCE
+            gameObject.GetComponent<CircleCollider2D>().radius = playerCollisionRadius; //Constant velocity
             if(Input.GetKey(up)) body.velocity = new Vector3(0,speed * Time.deltaTime,0);
             if(Input.GetKey(down)) body.velocity = new Vector3(0,-(speed * Time.deltaTime),0);
             if(Input.GetKey(left)) body.velocity = new Vector3(-(speed * Time.deltaTime),0,0);

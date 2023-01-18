@@ -5,49 +5,43 @@ using UnityEngine;
 public class Fan : MonoBehaviour
 {
     // Declare a list of Rigidbody objects
-    private List<Rigidbody2D> rigidbodies = new List<Rigidbody2D>();
+    private List<Transform> rigidbodies = new List<Transform>();
 
     // Declare a public Vector3 to specify the force to apply to the objects in the list
     public float maxForce;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        print("hi");
-        if (other.GetType() == typeof(BoxCollider2D) && other.tag == "Player")
+        if (col.GetType() == typeof(BoxCollider2D) && col.tag == "Player")
         {
-            print("hi");
-            // If the object that entered the trigger has a Rigidbody component, add it to the list
-            Rigidbody2D rigidbody = other.GetComponent<Rigidbody2D>();
-            if (rigidbody != null)
-            {
-                rigidbodies.Add(rigidbody);
-                
-            }
+                rigidbodies.Add(col.GetComponent<Transform>());    
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D col)
     {
-        if (other.GetType() == typeof(BoxCollider2D) && other.tag == "Player")
+        if (col.GetType() == typeof(BoxCollider2D) && col.tag == "Player")
         {
-            // If the object that exited the trigger has a Rigidbody component, remove it from the list
-            Rigidbody2D rigidbody = other.GetComponent<Rigidbody2D>();
-            if (rigidbody != null)
-            {
-                rigidbodies.Remove(rigidbody);
-                print("bye");
-            }
+                rigidbodies.Remove(col.GetComponent<Transform>());
         }
     }
 
     private void FixedUpdate()
     {
-        // Calculate the force to apply to each object in the list based on its distance from the transform
-        foreach (Rigidbody2D rigidbody in rigidbodies)
+        for(int i = 0; i < rigidbodies.Count; i++)
         {
-            float distance = Vector3.Distance(transform.position, rigidbody.transform.position);
-            float force = maxForce * (1.0f - distance / 10.0f); // Scale the force based on distance
-            rigidbody.AddForce(force * Vector3.forward);
+            rigidbodies[i].position += new Vector3(8f * Time.deltaTime,0,0);
         }
+        /*
+        // Calculate the force to apply to each object in the list based on its distance from the transform
+        foreach (Transform tran in transform)
+        {
+            //float distance = Vector3.Distance(transform.position, rigidbody.transform.position);
+            //float force = maxForce * (1.0f - distance / 10.0f); // Scale the force based on distance
+            tran.position += new Vector3(0,15f * Time.deltaTime,0);
+            //rigidbody.velocity = force * Vector3.forward;
+            //rigidbody.AddForce(force * Vector3.forward);
+        }
+        */
     }
 }

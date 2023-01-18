@@ -16,6 +16,7 @@ public class LineRen : MonoBehaviour
 
     void Update()
     {
+
         // Loops through number of points drawing lines between them
         for (int i = 0; i < points.Length; i++)
         {

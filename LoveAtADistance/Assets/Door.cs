@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Door : MonoBehaviour
@@ -5,29 +7,58 @@ public class Door : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider;
     [SerializeField]
-    private Switch _switch;
+    private List<Switch> _switches;
     [SerializeField]
-    private PressurePlate pressurePlate;
+    private List<PressurePlate> pressurePlates;
     private bool isOpen;
+    [SerializeField]
+    private bool stayOpen;
+    [SerializeField]
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
     void Update()
-    {
-        if (_switch != null)
+    {// Checks if all required pressure plates or switches have been activated
+        if(_switches.Count > 2 || pressurePlates.Count > 2)
         {
-            if(_switch.isOn) OpenDoor();
-            else CloseDoor();
-        }else
+            if (_switches.Count != 0)
+            {
+                if(_switches[0].isOn && _switches[1].isOn && _switches[2].isOn) OpenDoor();
+                else CloseDoor();
+            }else
+            {
+                if(pressurePlates[0].isPressed && pressurePlates[1].isPressed && pressurePlates[2].isPressed) OpenDoor();
+                else CloseDoor();
+            } 
+        }else if(_switches.Count > 1 || pressurePlates.Count > 1)
         {
-            if(pressurePlate.isPressed) OpenDoor();
-            else CloseDoor();
+            if (_switches.Count != 0)
+            {
+                if(_switches[0].isOn && _switches[1].isOn) OpenDoor();
+                else CloseDoor();
+            }else
+            {
+                if(pressurePlates[0].isPressed && pressurePlates[1].isPressed) OpenDoor();
+                else CloseDoor();
+            } 
+        }else if(_switches.Count == 1)
+        {
+            if (_switches.Count != 0)
+            {
+                if(_switches[0].isOn) OpenDoor();
+                else CloseDoor();
+            }else
+            {
+                if(pressurePlates[0].isPressed) OpenDoor();
+                else CloseDoor();
+            }  
         }
+        
     }
 
-    private void OpenDoor()
+    private void OpenDoor()///////CHANGE TO SPRITE OVER
     {
         if(!isOpen)
         {
@@ -38,7 +69,7 @@ public class Door : MonoBehaviour
     }
     private void CloseDoor()
     {
-        if(isOpen)
+        if(isOpen && !stayOpen)
         {
             isOpen = false;
             spriteRenderer.enabled = true;
