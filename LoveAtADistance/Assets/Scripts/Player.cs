@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     private bool isValid = true;
     private bool sliding = false;
     private Rigidbody2D body;
+    private GameManager gameManager;
 
     private bool slideDown = false;
     private bool slideUp = false;
@@ -89,10 +90,16 @@ public class Player : MonoBehaviour
         if (!isValid)
         {
             centre.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
+            gameManager.Die();
+            
         }
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
+        if (col.GetType() == typeof(BoxCollider2D) && col.transform.tag == "Player") //Checks it was player body not radius that hits switch //PRESS
+        {
+            isValid = false;
+        }
         if(col.transform.tag == "Ice" && !sliding)
         {
             print("in");

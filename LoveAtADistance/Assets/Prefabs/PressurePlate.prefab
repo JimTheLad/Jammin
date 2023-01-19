@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a8ac0509a54a4634bb451a0033fba740, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3f5aa88b5fe6a3b4abcd9de9e6179fa1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,7 +104,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.91, y: 0.91}
+    oldSize: {x: 1.0137931, y: 1.0137931}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e0de025a20f624fa9558e72ae58a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressedSprite: {fileID: 21300000, guid: 24d238159c1c33b4e8df2bcc876c92f3, type: 3}
-  notPressedSprite: {fileID: 21300000, guid: a8ac0509a54a4634bb451a0033fba740, type: 3}
+  pressedSprite: {fileID: 21300000, guid: a45938165a083f24d91eb0f49a5adcde, type: 3}
+  notPressedSprite: {fileID: 21300000, guid: 3f5aa88b5fe6a3b4abcd9de9e6179fa1, type: 3}
   isPressed: 0
 --- !u!82 &4490272684511554837
 AudioSource:

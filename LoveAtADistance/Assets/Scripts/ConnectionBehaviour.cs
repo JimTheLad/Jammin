@@ -15,7 +15,13 @@ public class ConnectionBehaviour : MonoBehaviour
   [SerializeField]
   private float warningRange = 2f;
   private SpriteRenderer spriteRenderer;
+  [SerializeField]
+  private Sprite heart1;
+  [SerializeField]
+  private Sprite heart2;
   public bool valid;
+  [SerializeField]
+  private GameManager gameManager;
 
   void Start()
   {
@@ -39,14 +45,16 @@ public class ConnectionBehaviour : MonoBehaviour
     if(ropeLength > ropeLengthMin && ropeLength < ropeLengthMax)
     {
       valid = true;
-      spriteRenderer.color = Color.black;
+      //spriteRenderer.color = Color.black;
     }else
     {
-        spriteRenderer.color = Color.red;
+        //spriteRenderer.color = Color.red;
+        gameManager.Die();
+
     }
 
     // Check if ropeLength is withing warning Range
-    if(ropeLength > ropeLengthMax - warningRange)
+    if(ropeLength > (ropeLengthMax - warningRange))
     {
       Color tmp = spriteRenderer.color;
       tmp.a = 255f * (((ropeLength - (ropeLengthMax - warningRange))) / warningRange);
@@ -55,8 +63,10 @@ public class ConnectionBehaviour : MonoBehaviour
       //print((ropeLengthMax - warningRange));
       spriteRenderer.color = tmp;
 
-    }else if(ropeLength < ropeLengthMin + warningRange)
+    }else if(ropeLength < (ropeLengthMin + warningRange))
     {
+      Color tmp = spriteRenderer.color;
+      tmp.a = 255f * (((ropeLength - (ropeLengthMin + warningRange))) / -warningRange);
       //Color tmp = spriteRe nderer.color;
       //tmp.a = 255 * ((ropeLength - (ropeLengthMin + warningRange)) / ropeLengthMax);
       //spriteRenderer.color = tmp;

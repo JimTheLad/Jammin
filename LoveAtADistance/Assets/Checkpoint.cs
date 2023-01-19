@@ -25,11 +25,11 @@ public class Checkpoint : MonoBehaviour
         
     }
     
-    private void OnTriggerExit2D()
+    private void OnTriggerExit2D()//Collider2D col
     {
         playerNum--;
         //STOP TEXT
-        print("ENTER");
+
     }
     private void OnTriggerEnter2D()
     {
@@ -38,7 +38,7 @@ public class Checkpoint : MonoBehaviour
         {
             gameManager.spawn1 = pos1;
             gameManager.spawn2 = pos2;
-            gameManager.spawn3 = pos2;
+            gameManager.spawn3 = pos3;
             //TEXT
         }
     }
